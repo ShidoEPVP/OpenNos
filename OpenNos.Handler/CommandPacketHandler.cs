@@ -192,6 +192,7 @@ namespace OpenNos.Handler
             }
 
             if (Int64.TryParse(packetsplit[2], out reput) && reput > 0)
+            if (Int64.TryParse(packetsplit[2], out reput) && reput < 5000002)
             {
                 Session.Character.Reput = reput;
                 Session.Client.SendPacket(Session.Character.GenerateFd());
